@@ -47,10 +47,10 @@ class General_Setup {
 	public function theme_setup() {
 		$this->custom_logo_setup();
 		add_theme_support( 'title-tag' );
-		// add_theme_support( 'post-thumbnails' );
-		// add_theme_support( 'automatic-feed-links' );
-		// add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-		// add_post_type_support( 'post', 'page-attributes' );
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+		add_post_type_support( 'post', 'page-attributes' );
 		// Remove Widgets Blok Style from theme
 		remove_theme_support( 'widgets-block-editor' );
 
@@ -233,11 +233,11 @@ class General_Setup {
 	// }
 
 	// Excerpt Read More
-	// function excerpt_more( $more ) {
-	// 	$read_more = sprintf( '<br><a class="read-more" href="%s">%s</a>', get_permalink(), esc_html__( 'Read More', 'untree' ) );
+	function excerpt_more( $more ) {
+		$read_more = sprintf( '<br><a class="read-more" href="%s">%s</a>', get_permalink(), esc_html__( 'Read More', 'untree' ) );
 
-	// 	return false;
-	// }
+		return false;
+	}
 
 	// Excerpt to 30 Words
 	function slab_excerpt_length ( $length ) {

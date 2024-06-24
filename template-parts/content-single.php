@@ -19,15 +19,6 @@ $linkedIn 		= get_user_meta( $author_id, 'atbdp_linkedin', true );
 $youtube 		= get_user_meta( $author_id, 'atbdp_youtube', true );
 ?>
 
-<!-- <section class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h3 style="color:red">Template: content-single.php</h3>
-		</div>
-	</div>
-</section> -->
-
-
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'theme-post-single' ); ?>>
 
 	<div class="theme-post-details">
@@ -45,31 +36,13 @@ $youtube 		= get_user_meta( $author_id, 'atbdp_youtube', true );
 				<h1 class="theme-post-title"><?php echo get_the_title(); ?></h1>
 
 				<div class="theme-post-meta">
+					<?php the_category(); ?>
+					<ul class="theme-post-publish-meta">											
+						<li><?php the_time( get_option( 'date_format' ) ); ?></li>
 
-					<ul>
-					
-						<?php //if ( Theme::$options['post_date'] ): ?>
-							
-							<li><span class="updated published"><?php the_time( get_option( 'date_format' ) ); ?></span></li>
-						
-						<?php //endif; ?>
-
-						<?php //if ( Theme::$options['post_cats'] && has_category() ): ?>
-
-							<li><?php the_category( ', ' ); ?></li>
-
-						<?php //endif; ?>
-
-						<?php //if ( Theme::$options['single_average_reading_time'] ): ?>
-
-							<li><?php echo Helper::get_reading_time( get_the_content(), 'span' ); ?></li>
-
-						<?php //endif; ?>
-						
+						<li><?php echo Helper::get_reading_time( get_the_content(), 'span' ); ?></li>
 					</ul>
-
 				</div>
-
 			</div>
 
 			<div class="theme-post-body">
@@ -82,23 +55,21 @@ $youtube 		= get_user_meta( $author_id, 'atbdp_youtube', true );
 
 		<div class="theme-post-bottom">
 
-			<?php //if ( Theme::$options['post_tags'] && has_tag() ): ?>
+			<div class="theme-post-tags">
 
-				<div class="theme-post-tags">
+				<ul class="d-flex list-unstyled">
 
-					<ul class="d-flex list-unstyled">
+					<?php echo get_the_term_list( $post->ID, 'post_tag', '<li>', '</li><li>', '</li>' ); ?>
 
-						<?php echo get_the_term_list( $post->ID, 'post_tag', '<li>', '</li><li>', '</li>' ); ?>
+				</ul>
 
-					</ul>
-
-				</div>
+			</div>
 
 			<?php //endif; ?>
 
 			<?php //if ( Theme::$options['post_social'] ): ?>
 
-				<?php get_template_part( 'template-parts/social-share' ); ?>
+				<?php //get_template_part( 'template-parts/social-share' ); ?>
 
 			<?php //endif; ?>
 
@@ -110,41 +81,41 @@ $youtube 		= get_user_meta( $author_id, 'atbdp_youtube', true );
 
 		<div class="theme-post-author cardify">
 
-			<div class="theme-post-author__thumb">
+			<!-- <div class="theme-post-author__thumb">
 
-				<a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo get_avatar( $author_id, 100 ); ?></a>
+				<a href="<?php //echo get_author_posts_url( $author_id ); ?>"><?php //echo get_avatar( $author_id, 100 ); ?></a>
 
-			</div>
+			</div> -->
 
 			<div class="theme-post-author__info">
+				<ul class="blog-post-author-info">
+					<li><a href="<?php echo get_author_posts_url( $author_id ); ?>"><?php echo get_avatar( $author_id, 100 ); ?></a></li>
 
-				<h5 class="theme-post-author__name">
-					<?php printf( '<a href="%s">%s</a>', esc_url( home_url( "/author/{$author_slug}/" ) ), esc_html( $author_name ) ); ?>
-				</h5>
+					<li class="theme-post-author__name"><?php printf( '<a href="%s">%s</a>', esc_url( home_url( "/author/{$author_slug}/" ) ), esc_html( ucwords( $author_name ) ) ); ?></li>
 
-				<p class="theme-post-author__bio"><?php echo wp_kses_post( $author_bio ); ?></p>
+				<!-- <p class="theme-post-author__bio"><?php //echo wp_kses_post( $author_bio ); ?></p> -->
 
-				<?php if ( ! empty( $facebook || $twitter || $linkedIn || $youtube ) ) : ?>
+				<!-- <?php //if ( ! empty( $facebook || $twitter || $linkedIn || $youtube ) ) : ?>
 
 					<ul class="list-unstyled theme-post-author__social">
 						<?php
-						if ( $facebook ) {
-							printf( '<li><a target="_blank" href="%s">%s</a></li>', $facebook, Helper::get_svg_icon( 'facebook' ) );
-						}
-						if ( $twitter ) {
-							printf( '<li><a target="_blank" href="%s">%s</a></li>', $twitter, Helper::get_svg_icon( 'twitter' ) );
-						}
-						if ( $linkedIn ) {
-							printf( '<li><a target="_blank" href="%s">%s</a></li>', $linkedIn, Helper::get_svg_icon( 'linkedin' ) );
-						}
-						if ( $youtube ) {
-							printf( '<li><a target="_blank" href="%s">%s</a></li>', $youtube, Helper::get_svg_icon( 'youtube' ) );
-						}
+						// if ( $facebook ) {
+						// 	printf( '<li><a target="_blank" href="%s">%s</a></li>', $facebook, Helper::get_svg_icon( 'facebook' ) );
+						// }
+						// if ( $twitter ) {
+						// 	printf( '<li><a target="_blank" href="%s">%s</a></li>', $twitter, Helper::get_svg_icon( 'twitter' ) );
+						// }
+						// if ( $linkedIn ) {
+						// 	printf( '<li><a target="_blank" href="%s">%s</a></li>', $linkedIn, Helper::get_svg_icon( 'linkedin' ) );
+						// }
+						// if ( $youtube ) {
+						// 	printf( '<li><a target="_blank" href="%s">%s</a></li>', $youtube, Helper::get_svg_icon( 'youtube' ) );
+						// }
 						?>
 					</ul>
 
-				<?php endif ?>
-
+				<?php //endif; ?> -->
+				</ul>
 			</div>
 
 		</div>
@@ -153,22 +124,12 @@ $youtube 		= get_user_meta( $author_id, 'atbdp_youtube', true );
 
 	<?php
 	//if ( Theme::$options['post_pagination'] ) {
-		get_template_part( 'template-parts/content-single-pagination' );
+		//get_template_part( 'template-parts/content-single-pagination' );
 	//}
 
 	//if ( Theme::$options['post_related'] ) {
 		get_template_part( 'template-parts/content-single-related' );
 	//}	
 	?>
-
-				
+			
 </div>
-
-
-<!-- <section class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h3 style="color:red">Template: content-single.php</h3>
-		</div>
-	</div>
-</section> -->

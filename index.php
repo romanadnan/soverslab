@@ -6,12 +6,10 @@
  */
 
 use SoversLab\SoversLab\Helper;
-//$post_class = Helper::has_sidebar() ? 'col-md-6 col-12' : 'col-lg-4 col-md-6 col-12';
+
 
 get_header(); 
 ?>
-
-
 
 <div class="untree_co-section bg-light">
     <div class="container">

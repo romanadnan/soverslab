@@ -34,11 +34,11 @@ $post_class  = 'col-lg-6 col-md-6';
 
 	<div class="row">
 
-		<?php foreach ( $related as $post_obj ): ?>
+		<?php foreach ( $related as $post_obj ) : ?>
 
 			<div class="<?php echo esc_attr( $post_class ); ?>">
 
-				<article id="post-<?php the_ID();?>" <?php post_class( 'theme-blog-each theme-related-blog-each' );?>>
+				<article id="post-<?php the_ID();?>" <?php post_class( 'theme-blog-each theme-related-blog-each' ); ?>>
 
 					<div class="theme-blog-card blog-grid-card">
 
@@ -50,13 +50,13 @@ $post_class  = 'col-lg-6 col-md-6';
 
 							</div>
 
-						<?php endif;?>
+						<?php endif; ?>
 
 						<div class="theme-blog-card__details">
 
 							<div class="theme-blog-card__content">
 
-								<h4 class="theme-blog-card__title"><a href="<?php echo esc_url( get_permalink( $post_obj ) ); ?>"><?php echo get_the_title( $post_obj ); ?></a> </h4>
+								<h4 class="theme-blog-card__title"><a href="<?php echo esc_url( get_permalink( $post_obj ) ); ?>"><?php echo get_the_title( $post_obj ); ?></a></h4>
 
 							</div>
 

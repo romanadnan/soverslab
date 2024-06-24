@@ -5,4 +5,4 @@
  * @version 1.0
  */
 
-dynamic_sidebar( 'sidebar' );
+//dynamic_sidebar( 'sidebar' );

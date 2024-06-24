@@ -8,9 +8,9 @@
 use SoversLab\SoversLab\Helper;
 
 ?>
-<li <?php comment_class(empty($args['has_children']) ? '' : 'depth-1'); ?> id="comment-<?php comment_ID(); ?>">
+<li <?php //comment_class(empty($args['has_children']) ? '' : 'depth-1'); ?> id="comment-<?php //comment_ID(); ?>">
 
-    <div class="media" id="div-comment-<?php comment_ID() ?>">
+    <div class="media" id="div-comment-<?php //comment_ID() ?>">
 
         <div class="cmnt_avatar">
 
