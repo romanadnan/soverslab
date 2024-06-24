@@ -334,3 +334,66 @@ nav {
 /*==============================================*/
 /*				End Blog page Style				*/
 /* ============================================ */
+
+
+/*==============================================*/
+/*				Start contact page Style		*/
+/* ============================================ */
+
+.slab-contact-form .form-group input {
+	height: 40px;
+	font-size: 16px;
+	padding-left: 20px;
+	border: 1px solid #f89dc6;
+	border-radius: 5px;
+}
+
+.slab-contact-form .form-group textarea {
+	font-size: 16px;
+	padding-left: 20px;
+	border: 1px solid #f89dc6;
+	border-radius: 5px;
+}
+
+.slab-contact-form p button {
+	color: #FFFFFF;
+	font-weight: 600px;
+	background-color: #FF3F95;
+	padding: 5px 25px;
+	border: none;
+	border-radius: 5px;
+}
+
+/*==============================================*/
+/*				End contact page Style			*/
+/* ============================================ */
+
+
+
+/*==============================================*/
+/*				Start Footer area Style		*/
+/* ============================================ */
+
+.slab-footer-subscribe-form p {
+	display: flex;
+}
+
+.slab-footer-subscribe-form input {
+	width: 80%;
+	font-size: 16px;
+	border: 1px solid #f89dc6;
+	border-radius: 5px 0 0 5px;
+}
+
+.slab-footer-subscribe-form button {
+	width: 20%;
+	color: #FFFFFF;
+	font-weight: 600px;
+	background-color: #FF3F95;
+	border: none;
+	border-radius: 0 5px 5px 0;
+}
+
+/*==============================================*/
+/*				End Footer area Style		*/
+/* ============================================ */
