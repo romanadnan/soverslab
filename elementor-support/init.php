@@ -33,8 +33,8 @@ class Widget_Init {
 
 		// Widgets -- dirname=>classname
 		$this->widgets = array(
-			'title'        => 'Title',
-			//'post'         => 'Post',
+			//'title'        => 'Title',
+			'post'         => 'Post',
 			// 'team-member'  => 'Team_Member',
 			// 'contact-info' => 'Contact_Info',
 			//'test' => 'Test',
@@ -42,7 +42,7 @@ class Widget_Init {
 	}
 
 	public function editor_style() {
-		$img = get_stylesheet_directory_uri() . '/elementor-support/icon.png';
+		$img = get_stylesheet_directory_uri() . '/elementor-support/soverslab-icon.png';
 		wp_add_inline_style( 'elementor-editor', '.elementor-control-type-select2 .elementor-control-input-wrapper {min-width: 130px;}.elementor-element .icon .soverslabtheme-el-custom{content: url(' . $img . ');width: 22px;}' );
 	}
 

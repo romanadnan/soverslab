@@ -19,8 +19,7 @@ get_header();
 	</section>
 
 
-
-<section id="body_area">
+	<section id="body_area">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">

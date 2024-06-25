@@ -207,31 +207,31 @@ nav {
     height: auto;
 }
 
-.post-meta {
+.post-meta, .post-meta-2 {
 	font-size: 13px;
 }
 
-.post-meta a {
+.post-meta a, .post-meta-2 a {
 	background-color: #FF3F95;
     color: #FFFFFF;
 	font-weight: 300;
 	text-decoration: none;
-    padding: 3px 15px 5px;
+    padding: 3px 15px 3px;
     border-radius: 4px;
-	margin-right: 5px;
+	margin-right: 15px;
 }
 
-.post-meta ul {
+.post-meta ul, .post-meta-2 ul {
 	display: flex;
 	color: #767a8d;
 	margin-top: 15px;
 }
 
-.post-meta ul li:first-child {
+.post-meta ul li:first-child, .post-meta-2 ul li:first-child {
 	margin-right: 40px;
 }
 
-.blog-post-title a {
+.blog-post-title a, .news-contents h3 a {
 	color: #121738;
 	font-size: 23px;
 	text-decoration: none;
@@ -331,6 +331,21 @@ nav {
 	margin-right: 40px;
 }
 
+.post-more-btn {
+	text-align: center;
+	margin-top: 50px;
+}
+.post-more-btn a {
+	color: #DA1877;
+	font-size: 19px;
+	font-weight: 600;
+	text-decoration: none;
+}
+.post-more-btn a:hover {
+	color: #AE0DA8;
+	text-decoration: underline;
+}
+
 /*==============================================*/
 /*				End Blog page Style				*/
 /* ============================================ */
@@ -374,6 +389,7 @@ nav {
 /*				Start Footer area Style		*/
 /* ============================================ */
 
+/* **********   Footer Subscrib Area Start   ******** */
 .slab-footer-subscribe-form p {
 	display: flex;
 }
@@ -393,6 +409,15 @@ nav {
 	border: none;
 	border-radius: 0 5px 5px 0;
 }
+/* **********   Footer Subscrib Area End   ******** */
+
+/* **********   Copyright Area Start   ******** */
+.elementor-widget-container p a {
+	color: #FF3F95;
+	text-decoration: none;
+}
+
+/* **********   Copyright Area End   ******** */
 
 /*==============================================*/
 /*				End Footer area Style		*/

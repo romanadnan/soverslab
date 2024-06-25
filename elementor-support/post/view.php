@@ -7,9 +7,9 @@
 
 namespace SoversLab\Theme\Elementor;
 
-use SoversLab\Untree\Helper;
+use SoversLab\SoversLab\Helper;
 
-//$thumb_size = 'soverslabtheme-size2';
+$thumb_size = 'soverslabtheme-size2';
 $query      = $data['query'];
 $columns    = $data['number_of_columns'];
 $show_btn   = ( isset( $data['show_more_button'] ) && 'yes' === $data['show_more_button'] ) ?  true : false ;
@@ -32,50 +32,14 @@ if ( $query->have_posts() ): ?>
 			<div class="col-md-6 mb-4 mb-lg-0 col-lg-<?php echo esc_attr( $columns ); ?>">
 
 				<div class="news-item">
-					
-					<div class="vcard d-flex align-items-center mb-4">
 
-						<?php if ( $data['show_post_avater'] ) : ?>
+					<div class="theme-blog-card__thumbnail">
 
-							<div class="img-wrap">
-
-								<?php echo $author_avater; ?>
-
-							</div>
-
-						<?php endif; ?>
-
-						<?php if ( $data['show_post_author_name'] || $data['show_date'] ) : ?>
-
-							<div class="post-meta">
-
-								<?php if ( $data['show_post_author_name'] ) : ?>
-
-									<strong><?php echo $author_name; ?></strong>
-
-								<?php endif; ?>
-
-								<?php if ( $data['show_date'] ) : ?>
-
-									<span><?php the_time( get_option( 'date_format' ) ); ?></span>
-
-								<?php endif; ?>
-
-							</div>
-
-						<?php endif; ?>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( $thumb_size ); ?></a>
 
 					</div>
-
+					
 					<div class="news-contents mb-4">
-
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-						<?php if ( $data['show_excpert'] ) : ?>
-
-							<p><?php echo get_the_excerpt(); ?></p>
-
-						<?php endif; ?>
 
 						<?php if ( $data['show_category'] || $data['show_reading_time'] ) : ?>
 
@@ -97,23 +61,17 @@ if ( $query->have_posts() ): ?>
 
 						<?php endif; ?>
 
+						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
 					</div>
 
 					<p class="mb-0">
-
-						<a href="<?php the_permalink(); ?>" class="read-more-arrow">
-
-							<svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
-								<path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
-							</svg>
-
-						</a>
-
+						<a href="<?php the_permalink(); ?>" class="blog-read-more-arrow">
+							<?php _e( 'Read More', 'soverslab' ); ?><i class="fa-solid fa-angles-right"></i>
+            			</a>
 					</p>
 
 				</div>
-
 			</div>
 
 		<?php endwhile; ?>
@@ -122,9 +80,9 @@ if ( $query->have_posts() ): ?>
 
 	<?php if ( $blog_url && $show_btn ) : ?>
 
-		<div class="theme-more-btn">
+		<div class="post-more-btn">
 
-			<a href="<?php echo esc_attr(  get_permalink( $blog_url ) ); ?>"><span class="theme-more-btn__text"><?php echo esc_html( $btn_text ); ?></span></a>
+			<a href="<?php echo esc_attr(  get_permalink( $blog_url ) ); ?>"><?php echo esc_html( $btn_text ); ?><i class="fa-solid fa-arrow-right-long"></i></a>
 
 		</div>
 
@@ -132,7 +90,7 @@ if ( $query->have_posts() ): ?>
 
 <?php else: ?>
 
-	<div><?php esc_html_e( 'Currently there are no posts', 'untree' ); ?></div>
+	<div><?php esc_html_e( 'Currently there are no posts', 'soverslab' ); ?></div>
 
 <?php endif; ?>
 
